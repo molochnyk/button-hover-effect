@@ -14,7 +14,7 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.4;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Raleway", sans-serif;
   overflow-x: hidden;
   color: rgb(19, 19, 19);
 }
@@ -38,9 +38,10 @@ a:hover {
 
 .wrap {
   padding: 0 10px;
+  font-family: "Raleway", sans-serif;
 }
 
-.row_one_title {
+.row_title {
   text-align: center;
   font-size: 32px;
   margin-bottom: 30px;
@@ -49,7 +50,7 @@ a:hover {
 .row_one {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   .row_one_item {
     flex-basis: 250px;
     .btn {
@@ -57,22 +58,21 @@ a:hover {
       position: relative;
       padding: 15px 0;
       border: none;
-      transition: all 200ms linear;
+      font-family: inherit;
       background-color: transparent;
       font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 2px;
       cursor: pointer;
+      transition: all 200ms linear;
     }
     .btn-1 {
-      background-color: $btn_row-1;
-      color: #fff;
-      font-weight: bold;
-      border: 3px solid transparent;
+      color: $color-text;
+      border: 1px solid lighten(#000, 70);
+      font-weight: 300;
       &:hover {
-        background-color: transparent;
-        border: 3px solid $btn_row-1;
-        color: $color-text;
+        box-shadow: 0 0 1px 1px $btn_row-1;
+        border-color: $btn_row-1;
       }
       &:focus {
         outline: none;
@@ -124,6 +124,7 @@ a:hover {
 .row_two {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
   .row_two_item {
     flex-basis: 250px;
     .btn {
@@ -131,12 +132,13 @@ a:hover {
       position: relative;
       padding: 15px 0;
       border: none;
-      transition: all 200ms linear;
+      font-family: inherit;
       background-color: transparent;
       font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 2px;
       cursor: pointer;
+      transition: all 200ms linear;
       &:before,
       &:after {
         box-sizing: border-box;
@@ -304,6 +306,120 @@ a:hover {
         transition: 
           width 300ms ease-out, 
           height 300ms ease-out 300ms;
+      }
+    }
+  }
+}
+
+.row_three {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  .row_three_item {
+    flex-basis: 250px;
+    .btn {
+      width: 100%;
+      position: relative;
+      padding: 15px 0;
+      border: none;
+      font-family: inherit;
+      background-color: transparent;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 200ms linear;
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 200ms linear;
+        z-index: -1;
+      }
+    }
+    .btn-1 {
+      color: $color-text;
+      border: 1px solid #000;
+      font-weight: 700;
+      overflow: hidden;
+      &::before{
+        background-color: $btn-row-3;
+        left: -100%;
+      }
+      &:hover {
+        border-color: $btn-row-3;
+        color: #fff;
+        &::before{
+          left: 0;
+        }
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 2px $focus;
+      }
+    }
+
+    .btn-2 {
+      color: $color-text;
+      border: 1px solid #000;
+      font-weight: 700;
+      overflow: hidden;
+      &::before{
+        background-color: $btn-row-3;
+        top: -100%;
+      }
+      &:hover {
+        border-color: $btn-row-3;
+        color: #fff;
+        &::before{
+          top: 0;
+        }
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 2px $focus;
+      }
+    }
+
+    .btn-3 {
+      color: $color-text;
+      border: 1px solid #000;
+      font-weight: 700;
+      overflow: hidden;
+      &::before{
+        background-color: $btn-row-3;
+        top: -100%;
+        left: -100%;
+      }
+      &:hover {
+        border-color: $btn-row-3;
+        color: #fff;
+        &::before{
+          top: 0;
+          left: 0;
+        }
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 2px $focus;
+      }
+    }
+
+    .btn-4 {
+      color: $color-text;
+      border: 1px solid #000;
+      font-weight: 700;
+      overflow: hidden;
+      z-index: 2;
+      
+
+      
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 2px $focus;
       }
     }
   }
