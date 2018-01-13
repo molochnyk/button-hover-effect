@@ -1,0 +1,318 @@
+@import "vars";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.4;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  color: rgb(19, 19, 19);
+}
+
+/*DEFAULT STYLE*/
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #2e2e2e;
+}
+
+/*RULE THIS PAGE*/
+.title {
+  margin: 10px 0 100px;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.wrap {
+  padding: 0 10px;
+}
+
+.row_one_title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.row_one {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  .row_one_item {
+    flex-basis: 250px;
+    .btn {
+      width: 100%;
+      position: relative;
+      padding: 15px 0;
+      border: none;
+      transition: all 200ms linear;
+      background-color: transparent;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .btn-1 {
+      background-color: $btn_trow-1;
+      color: #fff;
+      font-weight: bold;
+      border: 3px solid transparent;
+      &:hover {
+        background-color: transparent;
+        border: 3px solid $btn_trow-1;
+        color: $color-text;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 2px $focus;
+      }
+    }
+    .btn-2 {
+      background-color: transparent;
+      border: 1px solid $btn_trow-1;
+      color: $color-text;
+      &:hover {
+        box-shadow: inset 0px 0px 0px 4px $btn_trow-1;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 4px 4px  $focus;
+      }
+    }
+    .btn-3 {
+      border: 1px solid $btn_trow-1;
+      color: $color-text;
+      &:hover {
+        background-color: transparent;
+        box-shadow: 0px 0px 0px 4px $btn_trow-1;
+        color:  $color-text;
+        border-radius: 10px;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 4px 5px  $focus;
+      }
+    }
+    .btn-4 {
+      border: 4px solid lighten($btn_trow-1,40);
+      color: $color-text;
+      transition: all 250ms linear;
+      &:hover{
+        border-color:lighten($btn_trow-1,40);
+        box-shadow: 0px 0px 0px 4px $btn_trow-1;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 4px 5px $focus;
+      }
+    }
+  }
+}
+
+
+.row_two {
+  display: flex;
+  justify-content: space-between;
+  .row_two_item {
+    flex-basis: 250px;
+    .btn {
+      width: 100%;
+      position: relative;
+      padding: 15px 0;
+      border: none;
+      transition: all 200ms linear;
+      background-color: transparent;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      &:before,
+      &:after {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .btn-1 {
+      background-color: transparent;
+      border: none;
+      box-shadow: inset 0 0 0 4px #000;
+      font-weight: 400;
+      transition: color 0.25s;
+      &:before,
+      &:after {
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+        right: 0;
+      }
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+      &:hover::before {
+        border-top-color: red;
+        border-right-color: red;
+        transition: 
+          width 0.25s ease-out, 
+          height 0.25s ease-out 0.25s;
+      }
+      &:hover::after {
+        border-bottom-color: red;
+        border-left-color: red;
+        transition: 
+          border-color 0s ease-out 0.5s, 
+          width 0.25s ease-out 0.5s, 
+          height 0.25s ease-out 0.75s;
+      }
+    }
+    .btn-2 {
+      background-color: transparent;
+      border: none;
+      box-shadow: inset 0 0 0 4px #000;
+      font-weight: 400;
+      transition: color 0.25s;
+      &:before,
+      &:after {
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+      }
+      &:before {
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        bottom: 0;
+        right: 0;
+      }
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+      &:hover::before {
+        border-top-color: red;
+        border-right-color: red;
+        transition: 
+          width 0.3s ease-out, 
+      }
+      &:hover::after {
+        border-bottom-color: red;
+        border-left-color: red;
+        transition: 
+          border-color 0s ease-out 0.3s, 
+          width 0.6s ease-out 0.3s, 
+      }
+    }
+    .btn-3 {
+      background-color: transparent;
+      border: none;
+      box-shadow: inset 0 0 0 4px #000;
+      color: #000;
+      transition: color 0.25s;
+      &:before,
+      &:after {
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+        right: 0;
+      }
+      &:hover {
+        background-color: transparent;
+        &:before,
+        &:after {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &:hover:before {
+        border-top-color: red;
+        border-right-color: red;
+      }
+      &:hover:before {
+        border-bottom-color: red;
+        border-left-color: red;
+        transition: 
+          border-color 0s ease-out 0.1s,
+          width 0.5s ease-out 0.1s, 
+          height 0.25s ease-out 0.75s;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 4px 1px #0b75cc;
+      }
+    }
+    .btn-4 {
+      background-color: transparent;
+      border: none;
+      box-shadow: inset 0 0 0 4px #000;
+      font-weight: 400;
+      transition: color 0.25s;
+      overflow: hidden;
+      &:before,
+      &:after {
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        left: 0;
+        bottom: 0;
+      }
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+      &:hover::before {
+        border-top-color: red;
+        border-right-color: red;
+        transition: 
+          width 0.3s ease-out, 
+          height 0.3s ease-out 0.3s;
+      }
+      &:hover::after {
+        border-bottom-color: red;
+        border-left-color: red;
+        transition: 
+          width 0.3s ease-out, 
+          height 0.3s ease-out 0.3s;
+      }
+    }
+  }
+}
+// /.git/
