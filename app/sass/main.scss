@@ -640,6 +640,7 @@ a:hover {
       color: $color-text;
       font-weight: 700;
       overflow: hidden;
+      background-color: rgb(247, 247, 247);
       &::before{
         content: "";
         position: absolute;
@@ -662,6 +663,7 @@ a:hover {
         border-color: $btn-row-5;
         color: $btn-row-5;
         letter-spacing: 30px;
+        background-color: #fff;
         &::before{
           left: 0;
           width: 100%;
@@ -672,6 +674,26 @@ a:hover {
           width: 100%;
           background-color: $btn-row-5;
         }
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 2px $focus;
+      }
+    }
+
+    .btn-3 {
+      color: $color-text;
+      font-weight: 700;
+      overflow: hidden;
+      border: 1px solid #000;
+      font-weight: 300;
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+      &:hover {
+        border-color: $btn-row-5;
+        color: $btn-row-5;
+        font-weight: bold;
+        letter-spacing: 2.5px;
+        box-shadow: inset 0px 0px 0px 2px $btn-row-5;
       }
       &:focus {
         outline: none;
